@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="https://yokeii.com/blog/avatar.jpg">
+  
+  <title>Windows bat 小记 | 测试ing~</title>
+  <meta name="author" content="xyokei" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="Bat" />
+  
+  <meta name="description" content="基础命令 [命令]&#x2F;? 会打出 该命令如何使用及其参数  1. echo:12345rem echo [&amp;#123;on|off&amp;#125;] [message]echo off 关闭回显，后面所有命令不再显示echo hello 打开回显，显示 hello  2. @: 加在当前行头，当前行命令不显示，仅影响当前行  3. goto：123if&amp;#123;...&amp;#125; &#x3D;&#x3D;&amp;#1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows bat 小记">
+<meta property="og:url" content="https://xyokei.github.io/2021/04/19/os/os_bat/index.html">
+<meta property="og:site_name" content="测试ing~">
+<meta property="og:description" content="基础命令 [命令]&#x2F;? 会打出 该命令如何使用及其参数  1. echo:12345rem echo [&amp;#123;on|off&amp;#125;] [message]echo off 关闭回显，后面所有命令不再显示echo hello 打开回显，显示 hello  2. @: 加在当前行头，当前行命令不显示，仅影响当前行  3. goto：123if&amp;#123;...&amp;#125; &#x3D;&#x3D;&amp;#1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yokeii.com/blog/avatar.jpg">
+<meta property="article:published_time" content="2021-04-19T12:12:57.000Z">
+<meta property="article:modified_time" content="2022-10-20T08:30:05.038Z">
+<meta property="article:author" content="xyokei">
+<meta property="article:tag" content="Bat">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yokeii.com/blog/avatar.jpg">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
+    <script src="/js/kr-dark.min.js"></script>
+  
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
+  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
+  
+  
+    <link rel="stylesheet" href="/vendors/aplayer@1.10.1/dist/APlayer.min.css"></script>
+  
+  
+    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+  
+  <style>
+    
+      .kratos-cover.kratos-cover-2 {
+        background-image: url('/images/banner.webp');
+      }
+    
+    
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('/images/bg_dark.webp');
+        }
+      }
+    
+  </style>
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li>
+                                            
+                                                <a href="/">
+                                            
+                                                
+                                                    <i class="fa fa-home"></i>
+                                                
+                                                首页
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/categories">
+                                            
+                                                
+                                                    <i class="fa fa-bookmark"></i>
+                                                
+                                                分类
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/tags">
+                                            
+                                                
+                                                    <i class="fa fa-tags"></i>
+                                                
+                                                标签
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/archives/">
+                                            
+                                                
+                                                    <i class="fa fa-archive"></i>
+                                                
+                                                归档
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/about/">
+                                            
+                                                
+                                                    <i class="fa fa-user-circle"></i>
+                                                
+                                                关于我
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/friends/">
+                                            
+                                                
+                                                    <i class="fa fa-paw"></i>
+                                                
+                                                友链
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-link"></i>
+                                                
+                                                主题链接
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://candinya.com">
+                                                                
+                                                                主题博客
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://github.com/Candinya/Kratos-Rebirth">
+                                                                
+                                                                主题项目链接
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">测试ing~</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>测试ing~</h2> <br />
+                        <span>轻寒风剪剪</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        
+
+            <section class="col-md-8">
+
+        
+
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="https://xyokei.github.io/2021/04/19/os/os_bat/">
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">Windows bat 小记</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><time datetime="2021-04-19T12:12:57.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2021-04-19</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">xyokei</span>
+                </li>
+                <li>
+                    <i class="fa fa-edit"></i> 
+                    
+                    
+                        ~5.25K
+                    
+                    字
+                </li>
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1666254605038"></time> 前，其中的内容可能需要更新。</p></div>
+            </div>
+            
+            
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">基础命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-echo"><span class="toc-number">1.1.</span> <span class="toc-text">1. echo:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2"><span class="toc-number">1.2.</span> <span class="toc-text">2. @:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-goto%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">3. goto：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Rem"><span class="toc-number">1.4.</span> <span class="toc-text">4. Rem:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Pause"><span class="toc-number">1.5.</span> <span class="toc-text">5. Pause</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Call"><span class="toc-number">1.6.</span> <span class="toc-text">6. Call</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-start"><span class="toc-number">1.7.</span> <span class="toc-text">7. start</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-if"><span class="toc-number">1.8.</span> <span class="toc-text">8. if</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.9.</span> <span class="toc-text">9. 比较运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-choice"><span class="toc-number">1.10.</span> <span class="toc-text">10. choice</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-for-%E4%B8%89%E4%B8%AA%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%8Cfor-in-do"><span class="toc-number">1.11.</span> <span class="toc-text">11. for:三个关键字，for in do</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-dir"><span class="toc-number">1.12.</span> <span class="toc-text">12. dir</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">其他命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">字符串处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6"><span class="toc-number">3.1.</span> <span class="toc-text">1. 计算字符串长度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%A4%8D%E5%88%B6"><span class="toc-number">3.2.</span> <span class="toc-text">2. 复制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%B7%BB%E5%8A%A0%E5%86%85%E5%AE%B9"><span class="toc-number">3.3.</span> <span class="toc-text">3. 添加内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%88%A0%E9%99%A4"><span class="toc-number">3.4.</span> <span class="toc-text">4. 删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%98%AF%E5%90%A6%E5%90%AF%E7%94%A8%E5%91%BD%E4%BB%A4%E6%89%A9%E5%B1%95"><span class="toc-number">3.5.</span> <span class="toc-text">5. 是否启用命令扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86"><span class="toc-number">3.6.</span> <span class="toc-text">6. 文件处理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="toc-number">4.</span> <span class="toc-text">备注</span></a></li></ol>
+                </div>
+            
+            <hr />
+            <div itemprop="articleBody"><h1 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h1><blockquote>
+<p>[命令]&#x2F;? 会打出 该命令如何使用及其参数</p>
+</blockquote>
+<h2 id="1-echo"><a href="#1-echo" class="headerlink" title="1. echo:"></a>1. echo:</h2><figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">rem echo [&#123;on|off&#125;] [message]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> off 关闭回显，后面所有命令不再显示</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> hello 打开回显，显示 hello</span><br></pre></td></tr></table></figure>
+
+<h2 id="2"><a href="#2" class="headerlink" title="2. @:"></a>2. @:</h2><blockquote>
+<p>加在当前行头，当前行命令不显示，仅影响当前行</p>
+</blockquote>
+<h2 id="3-goto："><a href="#3-goto：" class="headerlink" title="3. goto："></a>3. goto：</h2><figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>&#123;...&#125; ==&#123;&#125; <span class="keyword">goto</span> xxx</span><br><span class="line">:xxx</span><br><span class="line">xxx 标签名，前面加:表示这个是标签</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-Rem"><a href="#4-Rem" class="headerlink" title="4. Rem:"></a>4. Rem:</h2><p>注释<br>eg: Rem Message</p>
+<h2 id="5-Pause"><a href="#5-Pause" class="headerlink" title="5. Pause"></a>5. Pause</h2><p>按任意键继续，相当于阻塞当前执行过程<br>pause &gt; nul 将 pause 指向 nul，即屏蔽回显输出，</p>
+<h2 id="6-Call"><a href="#6-Call" class="headerlink" title="6. Call"></a>6. Call</h2><p>从一个批处理程序调用另一个批处理程序，且父批处理程序不会终止</p>
+<p>作用域：只在脚本或批处理文件中该命令有效，其余无效</p>
+<p>BatchchParameters 批处理参数：从 %0 到 %9 或者变量</p>
+<p>arguments:参数：从 %0 到 %9 或者变量</p>
+<p>call [[Drive:][Path] FileName [BatchchParameters]] [:label</p>
+<p>[arguments]]<br>call d: \test\test1\filename %1 :label</p>
+<p>与 goto 调用 label 不同，call 会回调到当前语句，goto 调转后就不会</p>
+<p>再回到当前语句</p>
+<p>变量适用范围：同一进程，变量互通</p>
+<h2 id="7-start"><a href="#7-start" class="headerlink" title="7. start"></a>7. start</h2><p>启动脚本及调用外部程序</p>
+<p>作用域：在 cmd、脚本、批处理文件下有效，即全范围</p>
+<p>相当于新启动一个脚本的操作，创建了另一个进程</p>
+<p>变量适用范围：同一进程，单向传值，</p>
+<h2 id="8-if"><a href="#8-if" class="headerlink" title="8. if"></a>8. if</h2><p>eg: if”xx” &#x3D;&#x3D; “a” format a:</p>
+<p>if{xx} &#x3D;&#x3D; {a} goto xxx</p>
+<p>if [not] exist [path] edit xxx</p>
+<p>if [not] errorlevel number (xxx) else if [not] errorlevel</p>
+<p>number</p>
+<p>errorlevel 称错误码或者返回码，通常 dos 程序运行结束会返回一个数字</p>
+<p>值表示运行状态</p>
+<p>if 条件 （执行） else (执行)</p>
+<h2 id="9-比较运算符"><a href="#9-比较运算符" class="headerlink" title="9. 比较运算符"></a>9. 比较运算符</h2><p>EQU - 等于 常用 (&#x3D;&#x3D;)</br><br>NEQ - 不等于 （if not 1 &#x3D;&#x3D; 1. 没有!&#x3D;）</br><br>LSS - 小于</br><br>LEQ - 小于或等于</br><br>GTR - 大于</br><br>GEQ - 大于或等于</p>
+<h2 id="10-choice"><a href="#10-choice" class="headerlink" title="10. choice"></a>10. choice</h2><blockquote>
+<p>此命令为 dos 或者 Windows 外提供的外部命令</br><br>可以让用户输入一个字符串，从而可以运行不同的命令</br><br>eg: choice &#x2F;c: dme defrag,mem,end</br><br>&#x2F;c:后接提示输入的字符，无空格，</p>
+</blockquote>
+<h2 id="11-for-三个关键字，for-in-do"><a href="#11-for-三个关键字，for-in-do" class="headerlink" title="11. for:三个关键字，for in do"></a>11. for:三个关键字，for in do</h2><blockquote>
+<p>in 和 do 之间的 command 表示的字符串或变量一个或多个，每个字符</br><br>串或变量，即为一个元素，</br><br>每个元素之间，用空格键、跳格键、逗号、分号或等号分隔</br></p>
+</blockquote>
+<ol>
+<li>通用</li>
+</ol>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">默认文件</span><br><span class="line"><span class="keyword">for</span>&#123;%var | <span class="variable">%%v</span>ar&#125; <span class="keyword">in</span> (<span class="built_in">set</span>) <span class="keyword">do</span> command [command-parrameters]</span><br><span class="line">var 变量，单一字母，变量名称是区分大小写的</span><br><span class="line">指定变量推荐用%% 而不是%</span><br><span class="line">(<span class="built_in">set</span>)一个或一组文件，可为通配符</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>当命令扩展名被启用</li>
+</ol>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">for</span> /d %var <span class="keyword">in</span> (<span class="built_in">set</span>) <span class="keyword">do</span> command [command-parameters]</span><br><span class="line">/d 之遍历子文件夹</span><br><span class="line"><span class="keyword">for</span> /r [[drive:]<span class="built_in">path</span>] %var <span class="keyword">in</span> (<span class="built_in">set</span>) <span class="keyword">do</span> command</span><br><span class="line">[command-paremeters]</span><br><span class="line">/r 需要加上指定 <span class="built_in">path</span> ，深度遍历 <span class="built_in">path</span> 下的文件包括子文件夹下的文件</span><br><span class="line"><span class="keyword">for</span> /L %var <span class="keyword">in</span> (<span class="built_in">start</span>,step,end) <span class="keyword">do</span> command [command-paremeters]</span><br><span class="line">(<span class="built_in">start</span>,step,end) 以 step 增量方式从 <span class="built_in">start</span> -&gt; end</span><br><span class="line"><span class="function">eg: (1,1,5) (1 2 3 4 5) (5,-1,1) (5 4 3 2 1)</span></span><br><span class="line"><span class="function">      <span class="title">for</span> /<span class="title">f</span> [&quot;<span class="title">options</span>&quot;]  :解析文本专用 <span class="title">for</span>循环每一行</span></span><br><span class="line"><span class="function">            <span class="title">options</span>:</span></span><br><span class="line"><span class="function">                          <span class="title">delims</span>=<span class="title">xx</span> (以<span class="title">xx</span>为被处理字符串的分割字符，但默认只提取第一次出现<span class="title">xx</span>的符串) ,未指定<span class="title">delims</span>=，则默认以空格或跳格作为分隔符</span></span><br><span class="line"><span class="function">                          <span class="title">xx</span>为符号列表</span></span><br><span class="line"><span class="function">                          <span class="title">eg</span>: <span class="title">delims</span>=,  以逗号为分割符， <span class="title">delims</span>=., 以.或者，为截取字符</span></span><br><span class="line"><span class="function">                          定点提取：<span class="title">tokens</span>=</span></span><br><span class="line"><span class="function">                          <span class="title">tokens</span>=2  --提取第二节符串                      用1个变量接受</span></span><br><span class="line"><span class="function">                          <span class="title">tokens</span>=2,5  --提取第二和第五节符串          用2个变量接受</span></span><br><span class="line"><span class="function">                          <span class="title">token</span>=2-5,8 --提取2至5和第8节符串         用5个变量接受</span></span><br><span class="line"><span class="function">                          <span class="title">token</span>=2,*     --提取第2节符串和2以后的所有符串，不同的是，2以后所有符串被拼接成一个字符串，共用2个变量接收</span></span><br><span class="line"><span class="function">                          变量顺序遵循字母顺序，即第一个接受变量字母决定了，后续所有接受变量的字母都决定了</span></span><br><span class="line"><span class="function">        <span class="title">for</span>循环里利用<span class="title">goto</span>实现<span class="title">continue</span>和<span class="title">break</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="12-dir"><a href="#12-dir" class="headerlink" title="12. dir"></a>12. dir</h2><blockquote>
+<p>dir &#x2F;s &#x2F;b &#x2F;ad [path]</p>
+</blockquote>
+<h1 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h1><ol>
+<li>ping</li>
+<li>telnet 使用前需按照</li>
+<li>random 随机数</li>
+<li>exit 结束程序</li>
+<li>shutdown -s 关机</li>
+</ol>
+<h1 id="字符串处理"><a href="#字符串处理" class="headerlink" title="字符串处理"></a>字符串处理</h1><blockquote>
+<p>%元字符:~起始位置，截取长度%（起始值从 0 开始，截取长度可选，省略逗号和截取长度，将截到结尾，截取长度&lt;0 倒数位截）</p>
+</blockquote>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#替换：</span><br><span class="line"><span class="built_in">set</span> a=&quot;abcd1234&quot;</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">%a%</span> 显示：&quot;abcd1234&quot;</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> a=<span class="variable">%a:1=kk%</span> 替换“<span class="number">1</span>”为“kk”</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">%a%</span> 显示：&quot;abcdkk234&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#合并：</span><br><span class="line"><span class="built_in">set</span> str1 = <span class="variable">%str1%</span><span class="variable">%str2%</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-计算字符串长度"><a href="#1-计算字符串长度" class="headerlink" title="1. 计算字符串长度"></a>1. 计算字符串长度</h2><blockquote>
+<p>用循环，判断字符串是否为空，为空退出，不为空，截掉一个字符 num++</br><br>注册表相关</br><br>HKCR： HKEY_CLASSES_ROOT</br><br>HKCU： HKEY_CURRENT_USER</br><br>HKLM： HKEY_LOCAL_MACHINE</br><br>HKU： HKEY_USERS</br><br>HKCC： HKEY_CURRENT_CONFIG</br><br>远程机器只有 HKLM 和 HKU</br><br>返回值 0 成功 1 失败</p>
+</blockquote>
+<h2 id="2-复制"><a href="#2-复制" class="headerlink" title="2. 复制"></a>2. 复制</h2><figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 语法:</span><br><span class="line">reg <span class="built_in">copy</span> KeyName1 KeyName2 [/s] [/f]</span><br><span class="line">/s #复制指定子项下的所有子项和项。</span><br><span class="line">#备份</span><br><span class="line">#语法：</span><br><span class="line">reg export KeyName FileName #仅支持本地操作</span><br><span class="line">#导入</span><br><span class="line">#语法:</span><br><span class="line">reg import FileName</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-添加内容"><a href="#3-添加内容" class="headerlink" title="3. 添加内容"></a>3. 添加内容</h2><figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#语法：</span><br><span class="line">reg add KeyName [/v EntryName|/ve] [/t DataType] [/s separator] [/d value] [/f]</span><br><span class="line">reg add &quot;file 全 <span class="built_in">path</span>&quot; /v 名称 /t 类型 /d “值” /f （/f-&gt;无需请求确认）</span><br><span class="line">值中有复杂符号 则 /d \&quot;值\&quot;</span><br><span class="line">/ve 指定添加到注册表中的项为空值。</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-删除"><a href="#4-删除" class="headerlink" title="4. 删除"></a>4. 删除</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#语法：</span><br><span class="line">reg delete KeyName [&#123;/v EntryName|/ve|/va&#125;] [/f]</span><br><span class="line">/ve 指定只可以删除为空值的项。</span><br><span class="line">/va 删除指定子项下的所有项。使用本参数不能删除指定子项下的子项。</span><br><span class="line">#修改后结束并刷新，可使修改内容生效 ,重启资源管理器</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">taskkill</span> /f /im explorer.exe &gt;<span class="built_in">nul</span></span><br><span class="line"><span class="built_in">start</span> &quot;&quot; &quot;explorer.exe&quot;</span><br><span class="line">#系统服务</span><br><span class="line"><span class="built_in">net</span> stop 服务名</span><br><span class="line"><span class="built_in">net</span> <span class="built_in">start</span> 服务名</span><br><span class="line">sc config 服务名 <span class="built_in">start</span> =auto 设置自动</span><br><span class="line">sc config 服务名 <span class="built_in">start</span> =demand 设置手动</span><br><span class="line">sc config 服务名 <span class="built_in">start</span> =disabled 设置禁用</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-是否启用命令扩展"><a href="#5-是否启用命令扩展" class="headerlink" title="5. 是否启用命令扩展"></a>5. 是否启用命令扩展</h2><figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setlocal</span> &#123;enableextension | disableextensions&#125; &#123;enabledelayedexpansion | disabledelayedexpansion&#125;\</span><br><span class="line"># 变量延迟用 <span class="variable">!a!</span> 一对感叹号包起来</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-文件处理"><a href="#6-文件处理" class="headerlink" title="6. 文件处理"></a>6. 文件处理</h2><ul>
+<li>删除</li>
+</ul>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">del</span> /a /s /q /f d:\test\a.dos</span><br><span class="line">/f 强制删除只读文件。</span><br><span class="line">/s 从所有子目录删除指定文件。</span><br><span class="line">/q 安静模式。删除全局通配符时，不要求确认。</span><br><span class="line">/a 根据属性选择要删除的文件</span><br><span class="line">/AR、/AH、/AS、/AA 分别表示删除只读、隐藏、系统、存档文件，/A-R、/A-H、/A-S. /A-A 表示删除除只读、隐藏、系统、存档以外的文件</span><br><span class="line">语法：<span class="built_in">rmdir</span> /q /s d:\test\logs 删除该目录所有文件及其目录</span><br><span class="line"><span class="built_in">rd</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建</li>
+</ul>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">md</span>[drive:]<span class="built_in">path</span></span><br><span class="line"><span class="built_in">xcopy</span> a\* b /y /e /i /q</span><br><span class="line">/y：不弹出“确认是否覆写已存在目标文件”的提示</span><br><span class="line"></span><br><span class="line">/e：复制文件及子文件夹内所有内容，包括空文件夹（对比/s, /s 不复制空文件夹）</span><br><span class="line"></span><br><span class="line">/i：如果 b 不存在并且复制超过一个文件则默认 b 是目录名</span><br><span class="line"></span><br><span class="line">/q：quiet，静默模式</span><br><span class="line"></span><br><span class="line"># 提示：</span><br><span class="line"><span class="variable">%cd%</span> 当前执行的命令</span><br><span class="line"><span class="built_in">start</span> &quot;&quot; &quot;..exe&quot; 第一个参数是窗口显示的标题</span><br><span class="line"><span class="built_in">copy</span> c:\*.\* d:\back</span><br></pre></td></tr></table></figure>
+
+<h1 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h1><ol>
+<li><p>符号(@)</p>
+<blockquote>
+<p>@在批处理中的意思是关闭当前行的回显。</p>
+</blockquote>
+</li>
+<li><p>符号(&gt;)</p>
+<blockquote>
+<p>&gt; 的意思是传递并覆盖。</p>
+</blockquote>
+</li>
+<li><p>符号(&gt;&gt;)</p>
+<blockquote>
+<p>符号&gt;&gt;的作用与符号&gt;相似，但他们的区别在于&gt;&gt;是传递并在文件末尾追加&gt;&gt;也可将回显传递给控制台。</p>
+</blockquote>
+</li>
+<li><p>符号(|)</p>
+<p>|是一个管道传输命令意思是将上一命令执行的结果传递给下一命令去处理。</p>
+</li>
+<li><p>符号(^)</p>
+<p>^ 是对特殊符号 &gt; 、&lt;. &amp;、的前导字符。在命令中他将以上的 3 个符号的特殊动能去掉仅仅只吧他们当成符号而不使用他们的特殊意义。</p>
+</li>
+<li><p>符号(&amp;)</p>
+<p>&amp;符号允许在一行中使用 2 个以上不同的命令，当第一个命令执行失败将不影响第 2 个命令的执行。</p>
+</li>
+<li><p>符号(&amp;&amp;)</p>
+<p>&amp;&amp;符号也是允许在一行中使用 2 个以上不同的命令，当第一个命令执行失败后后续的命令将不会再被执行。</p>
+</li>
+<li><p>符号(“ “)</p>
+<p>“ “符号允许在字符串中包含空格。进入一个特殊的目录可以用如下方法</p>
+<blockquote>
+<p>c:&gt;cd “Program Files”</p>
+</blockquote>
+</li>
+<li><p>符号（,）</p>
+<p>,符号相当于空格。在某些特殊的情况下可以用,来代替空格使用。</p>
+<blockquote>
+<p>c:&gt;dir,c:\</p>
+</blockquote>
+</li>
+<li><p>符号(;)</p>
+<blockquote>
+<p>;符号当命令相同的时候可以将不同的目标用;隔离开来但执行效果不变。如执行过程中发生错误则只返回错误报告但程序还是会继续执行。例：<br>DIR C:;D:;E:\F:\</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> /p a=按回车键退出</span><br><span class="line"><span class="built_in">cls</span> 清屏</span><br><span class="line">中文乱码</span><br><span class="line">把 dos 文件的编码改为 ANSI，UTF-<span class="number">8</span> 在 win10 我这儿会中文显示乱码</span><br><span class="line"></span><br><span class="line">control.exe /name Microsoft.ProgramsAndFeatures 打开程序和功能</span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">rem for %%a in (copyfrom\*) do echo %a%</span></span><br></pre></td></tr></table></figure>
+</div>
+        </div>
+        
+            <div class="kratos-copyright text-center clearfix">
+                <h5 itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://xyokei.github.io/2021/04/19/os/os_bat/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://xyokei.github.io/2021/04/19/os/os_bat/";
+            const title         = "「Windows bat 小记」";
+            const excerpt       = `基础命令
+[命令]&#x2F;? 会打出 该命令如何使用及其参数
+
+1. echo:12345rem echo [&#123;on|off&#125;] [message]echo off 关闭回显，后面所有命令不再显示echo he...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/Bat/" rel="tag">Bat</a>
+                </div>
+                <div class="pull-date">
+                    <time datetime="2022-10-20T08:30:05.038Z" itemprop="dateModified">最后编辑：2022-10-20</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" Java基本回顾" href="/2021/02/19/note/note_java/">&lt; 上一篇</a>
+            </div>
+            
+            
+            <div class="nav-next clearfix">
+                <a title=" SQL笔记" href="/2021/10/12/yuque/📝SQL笔记/">下一篇 &gt;</a>
+            </div>
+            
+        </nav>
+    
+    
+        <link rel="stylesheet" href="/vendors/gitalk@1.7.2/dist/gitalk.css"></script>
+<div id="gitalk-container" class="post-comments lazy-load" style="padding-left:2rem; padding-right:2rem;"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            console.log('Gitalk loading...');
+            const gitalk = new Gitalk(Object.assign({
+                id: '/2021/04/19/os/os_bat/',
+                path: '/2021/04/19/os/os_bat/'
+            }, JSON.parse('{"clientID":"b64eaab3faddd58d14d2","clientSecret":"01b99b44be16a987ac6b5dc240c9c11e870b86a8","repo":"xyokei.github.io","owner":"xyokei","admin":"xyokei","distractionFreeMode":false}')));
+
+            gitalk.render('gitalk-container');
+        }
+        if (typeof Gitalk === 'undefined') {
+            const src = '/vendors/gitalk@1.7.2/dist/gitalk.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://github.com/gitalk/gitalk">comments powered by Gitalk.</a></noscript>
+    
+</article>
+
+        
+
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="https://yokeii.com/blog/avatar.jpg" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center">随便记记</p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                13
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                8
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                7
+            </span>
+        </a>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="toc-text">基础命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-echo"><span class="toc-text">1. echo:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2"><span class="toc-text">2. @:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-goto%EF%BC%9A"><span class="toc-text">3. goto：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Rem"><span class="toc-text">4. Rem:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Pause"><span class="toc-text">5. Pause</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Call"><span class="toc-text">6. Call</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-start"><span class="toc-text">7. start</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-if"><span class="toc-text">8. if</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">9. 比较运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-choice"><span class="toc-text">10. choice</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-for-%E4%B8%89%E4%B8%AA%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%8Cfor-in-do"><span class="toc-text">11. for:三个关键字，for in do</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-dir"><span class="toc-text">12. dir</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4"><span class="toc-text">其他命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86"><span class="toc-text">字符串处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6"><span class="toc-text">1. 计算字符串长度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%A4%8D%E5%88%B6"><span class="toc-text">2. 复制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%B7%BB%E5%8A%A0%E5%86%85%E5%AE%B9"><span class="toc-text">3. 添加内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%88%A0%E9%99%A4"><span class="toc-text">4. 删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%98%AF%E5%90%A6%E5%90%AF%E7%94%A8%E5%91%BD%E4%BB%A4%E6%89%A9%E5%B1%95"><span class="toc-text">5. 是否启用命令扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86"><span class="toc-text">6. 文件处理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="toc-text">备注</span></a></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/MarkDown/">MarkDown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/SQL/">SQL</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/Windows/">Windows</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E8%A8%80/">语言</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E8%A8%80/%E8%8B%B1%E8%AF%AD/">英语</a><span class="category-list-count">1</span></li></ul></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Bat/" style="font-size: 0.67em;">Bat</a> <a href="/tags/Git/" style="font-size: 0.67em;">Git</a> <a href="/tags/Hexo/" style="font-size: 0.6em;">Hexo</a> <a href="/tags/Java/" style="font-size: 0.73em;">Java</a> <a href="/tags/MarkDown/" style="font-size: 0.6em;">MarkDown</a> <a href="/tags/SQL/" style="font-size: 0.8em;">SQL</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 0.6em;">笔记</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2022/10/20/yuque/nodejs%20%E7%AC%94%E8%AE%B0/"><i class="fa  fa-book"></i> nodejs 笔记</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/10/20/yuque/SQL%E9%97%AE%E9%A2%98/"><i class="fa  fa-book"></i> SQL问题记录</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/10/20/yuque/%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84SQL/"><i class="fa  fa-book"></i> 常用的SQL语句</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/10/12/yuque/Hexo%20%E5%B0%8F%E8%AE%B0/"><i class="fa  fa-book"></i> Hexo 小记</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/02/19/language/english_36daystop/"><i class="fa  fa-book"></i> 36单元废止</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  class="ap-lrc"  >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        <li><a href="mailto:autumnsigni@gmail.com"><i class="fa fa-envelope"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://t.me/autumnkk"><i class="fa fa-telegram"></i></a></li>
+                        
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/xyokei"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2022 测试ing~ 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by xyokei.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+
+    <script async src="/js/candy.min.js"></script>
+
+
+
+    <script defer src="/vendors/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    
+    <script defer src="/vendors/meting@2.0.1/dist/Meting.min.js"></script>
+    <meting-js
+        server="netease"
+        type="playlist"
+        id="7683772009"
+        order="random"
+        fixed="true"
+    >
+    </meting-js>
+
+
+
+    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="/vendors/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>

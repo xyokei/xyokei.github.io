@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="https://yokeii.com/blog/avatar.jpg">
+  
+  <title>Hexo 小记 | 测试ing~</title>
+  <meta name="author" content="xyokei" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="Hexo" />
+  
+  <meta name="description" content="Hexo 搭建的各种小问题，记录一下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 小记">
+<meta property="og:url" content="https://xyokei.github.io/2022/10/12/yuque/Hexo%20%E5%B0%8F%E8%AE%B0/index.html">
+<meta property="og:site_name" content="测试ing~">
+<meta property="og:description" content="Hexo 搭建的各种小问题，记录一下">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yokeii.com/blog/avatar.jpg">
+<meta property="article:published_time" content="2022-10-12T12:12:57.000Z">
+<meta property="article:modified_time" content="2022-10-20T08:30:48.306Z">
+<meta property="article:author" content="xyokei">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yokeii.com/blog/avatar.jpg">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
+    <script src="/js/kr-dark.min.js"></script>
+  
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
+  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
+  
+  
+    <link rel="stylesheet" href="/vendors/aplayer@1.10.1/dist/APlayer.min.css"></script>
+  
+  
+    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+  
+  <style>
+    
+      .kratos-cover.kratos-cover-2 {
+        background-image: url('/images/banner.webp');
+      }
+    
+    
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('/images/bg_dark.webp');
+        }
+      }
+    
+  </style>
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li>
+                                            
+                                                <a href="/">
+                                            
+                                                
+                                                    <i class="fa fa-home"></i>
+                                                
+                                                首页
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/categories">
+                                            
+                                                
+                                                    <i class="fa fa-bookmark"></i>
+                                                
+                                                分类
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/tags">
+                                            
+                                                
+                                                    <i class="fa fa-tags"></i>
+                                                
+                                                标签
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/archives/">
+                                            
+                                                
+                                                    <i class="fa fa-archive"></i>
+                                                
+                                                归档
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/about/">
+                                            
+                                                
+                                                    <i class="fa fa-user-circle"></i>
+                                                
+                                                关于我
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/friends/">
+                                            
+                                                
+                                                    <i class="fa fa-paw"></i>
+                                                
+                                                友链
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-link"></i>
+                                                
+                                                主题链接
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://candinya.com">
+                                                                
+                                                                主题博客
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://github.com/Candinya/Kratos-Rebirth">
+                                                                
+                                                                主题项目链接
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">测试ing~</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>测试ing~</h2> <br />
+                        <span>轻寒风剪剪</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        
+
+            <section class="col-md-8">
+
+        
+
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="https://xyokei.github.io/2022/10/12/yuque/Hexo%20%E5%B0%8F%E8%AE%B0/">
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">Hexo 小记</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><time datetime="2022-10-12T12:12:57.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2022-10-12</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">xyokei</span>
+                </li>
+                <li>
+                    <i class="fa fa-edit"></i> 
+                    
+                    
+                        ~12.48K
+                    
+                    字
+                </li>
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1666254648306"></time> 前，其中的内容可能需要更新。</p></div>
+            </div>
+            
+            
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81-%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">一、 安装环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%BF%85%E5%A4%87%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 必备软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E6%9B%B4%E6%94%B9%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 更改安装模块位置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81hexo-%E6%96%B0%E6%89%8B%E7%89%88"><span class="toc-number">2.</span> <span class="toc-text">二、hexo 新手版</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 创建仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E6%9C%AC%E5%9C%B0%E6%8B%89-hexo"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 本地拉 hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-git-%E8%B4%A6%E6%88%B7%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 git 账户设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81hexo-Github-Action-%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E7%89%88"><span class="toc-number">3.</span> <span class="toc-text">三、hexo + Github Action 自动部署版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81hexo-github-Action-yuque"><span class="toc-number">4.</span> <span class="toc-text">四、hexo + github Action + yuque</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81-%E5%86%99%E6%96%87%E6%A1%A3-%E5%92%8C-%E4%B8%BB%E9%A2%98"><span class="toc-number">5.</span> <span class="toc-text">五、 写文档 和 主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE%E5%8D%9A%E5%AE%A2%E5%8F%82%E8%80%83"><span class="toc-number">5.1.</span> <span class="toc-text">添加分类和标签博客参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E7%AB%99%E7%82%B9%E5%9B%BE%E6%A0%87%E5%92%8C%E5%A4%B4%E5%83%8F"><span class="toc-number">5.2.</span> <span class="toc-text">更改站点图标和头像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%84%E5%A4%87%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-number">5.3.</span> <span class="toc-text">预备的目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E4%B8%BB%E9%A2%98"><span class="toc-number">6.</span> <span class="toc-text">六、主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83-%E3%80%81%E9%80%89%E6%8B%A9"><span class="toc-number">7.</span> <span class="toc-text">七 、选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB-%E3%80%81%E9%97%AE%E9%A2%98"><span class="toc-number">8.</span> <span class="toc-text">八 、问题</span></a></li></ol>
+                </div>
+            
+            <hr />
+            <div itemprop="articleBody"><p>Hexo 搭建的各种小问题，记录一下</p>
+<span id="more"></span>
+
+<h2 id="一、-安装环境"><a href="#一、-安装环境" class="headerlink" title="一、 安装环境"></a>一、 安装环境</h2><h3 id="1-1-必备软件"><a href="#1-1-必备软件" class="headerlink" title="1.1 必备软件"></a>1.1 必备软件</h3><ul>
+<li>node</li>
+<li>npm</li>
+<li>git</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rem 测试</span><br><span class="line">git version</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br><span class="line">cnpm -v</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-更改安装模块位置"><a href="#1-2-更改安装模块位置" class="headerlink" title="1.2 更改安装模块位置"></a>1.2 更改安装模块位置</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#更改安装位置</span></span><br><span class="line">npm config <span class="built_in">set</span> prefix <span class="string">&quot;E:\develop\nodejs\node_global\node_modules&quot;</span></span><br><span class="line">npm config <span class="built_in">set</span> cache <span class="string">&quot;E:\nodejs\node_cache&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#运行 npm list -global 查看</span></span><br><span class="line">npm list <span class="literal">-global</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="二、hexo-新手版"><a href="#二、hexo-新手版" class="headerlink" title="二、hexo 新手版"></a>二、hexo 新手版</h2><h3 id="2-1-创建仓库"><a href="#2-1-创建仓库" class="headerlink" title="2.1 创建仓库"></a>2.1 创建仓库</h3><p>仓库名必须 和符合 用户名.github.io 不然最后会 404</p>
+<h3 id="2-2-本地拉-hexo"><a href="#2-2-本地拉-hexo" class="headerlink" title="2.2 本地拉 hexo"></a>2.2 本地拉 hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">npm install hexo-deployer-git</span><br><span class="line"></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&#x27;autumnsigni@gmail.com&#x27;</span></span><br><span class="line">ssh-keygen -f hexo-deploy-key -t rsa -C <span class="string">&quot;autumnsigni@gmail.com&quot;</span></span><br><span class="line"><span class="comment"># 验证秘钥是否配置成功</span></span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-git-账户设置"><a href="#2-3-git-账户设置" class="headerlink" title="2.3 git 账户设置"></a>2.3 git 账户设置</h3><ul>
+<li>设置关联账号</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;xyokei&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;autumnsigni@gmail.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>生成秘钥</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &#x27;autumnsigni@gmail.com&#x27;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>关联远程仓库</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装hexo</span></span><br><span class="line">npm install -g hexo-cli</span><br><span class="line"><span class="comment">#创建blog源</span></span><br><span class="line">hexo init</span><br><span class="line"></span><br><span class="line"><span class="comment">#关联仓库</span></span><br><span class="line">git init</span><br><span class="line">git remote add origin git@github.com:xyokei/blog_source.git</span><br><span class="line">git pull --rebase origin master <span class="comment">#会报找不到分支错 不用管</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#提交</span></span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;init repo&quot;</span></span><br><span class="line">git push -u origin master</span><br><span class="line"></span><br><span class="line"><span class="comment">#解决failed to connect to github.com port 443</span></span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line"></span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>生成部署的公钥和私钥</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#blog 源文件下运行 实际随便那里都行</span></span><br><span class="line">ssh-keygen -f hexo-deploy-key -t rsa -C <span class="string">&quot;autumnsigni@gmail.com&quot;</span></span><br><span class="line"><span class="comment">#公钥放 github.io</span></span><br><span class="line"><span class="comment">#私钥放 私有仓库</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="三、hexo-Github-Action-自动部署版"><a href="#三、hexo-Github-Action-自动部署版" class="headerlink" title="三、hexo + Github Action 自动部署版"></a>三、hexo + Github Action 自动部署版</h2><p>参考博文</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45377770/article/details/105228938">https://blog.csdn.net/weixin_45377770&#x2F;article&#x2F;details&#x2F;105228938</a></p>
+</blockquote>
+<p>参考博文</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41426117/article/details/108703295">https://blog.csdn.net/qq_41426117&#x2F;article&#x2F;details&#x2F;108703295</a> &gt; <a target="_blank" rel="noopener" href="https://jeam.org/761615aa">https://jeam.org/761615aa</a></p>
+</blockquote>
+<ul>
+<li><p><strong>Action 文件编写</strong></p>
+<p><strong>在本地生成的博客根目录下找到 .github 这个文件夹，在里面创建名为 workflows 的文件夹</strong><br>** 再建一个名为 xxx.yml 的文件**</p>
+</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># workflow name</span></span><br><span class="line"><span class="attr">name:</span> <span class="string">Hexo</span> <span class="string">Blog</span> <span class="string">CI</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># master branch on push, auto run</span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line"><span class="attr">push:</span></span><br><span class="line"><span class="attr">branches:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">master</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line"><span class="attr">build:</span></span><br><span class="line"><span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line"><span class="attr">if:</span> <span class="string">github.event.repository.owner.id</span> <span class="string">==</span> <span class="string">github.event.sender.id</span></span><br><span class="line"></span><br><span class="line"><span class="attr">steps:</span>		<span class="comment"># 获取博客源码和主题</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">source</span></span><br><span class="line"><span class="attr">uses:</span> <span class="string">actions/checkout@v2</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">Node.js</span></span><br><span class="line"><span class="attr">uses:</span> <span class="string">actions/setup-node@v1</span></span><br><span class="line"><span class="attr">with:</span></span><br><span class="line"><span class="attr">node-version:</span> <span class="string">&#x27;14&#x27;</span>	<span class="comment"># 使用node.js的版本（不要太高）</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">Deploy</span> <span class="string">Private</span> <span class="string">Key</span></span><br><span class="line"><span class="attr">env:</span></span><br><span class="line"><span class="attr">DEPLOY_KEY:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.DEPLOY_KEY</span> <span class="string">&#125;&#125;</span></span><br><span class="line"><span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">mkdir</span> <span class="string">-p</span> <span class="string">~/.ssh/</span></span><br><span class="line"><span class="string">echo</span> <span class="string">&quot;$DEPLOY_KEY&quot;</span> <span class="string">&gt;</span> <span class="string">~/.ssh/id_rsa</span></span><br><span class="line"><span class="string">chmod</span> <span class="number">700</span> <span class="string">~/.ssh</span></span><br><span class="line"><span class="string">chmod</span> <span class="number">600</span> <span class="string">~/.ssh/id_rsa</span></span><br><span class="line"><span class="string">ssh-keyscan</span> <span class="string">github.com</span> <span class="string">&gt;&gt;</span> <span class="string">~/.ssh/known_hosts</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">Git</span> <span class="string">Infomation</span></span><br><span class="line"><span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">user.name</span> <span class="string">&#x27;xyokei&#x27;</span></span><br><span class="line"><span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">user.email</span> <span class="string">&#x27;autumnsigni@gmail.com&#x27;</span></span><br><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-cli</span> <span class="string">-g</span></span><br><span class="line"><span class="string">npm</span> <span class="string">install</span></span><br><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">hexo</span> <span class="string">--save</span></span><br><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-deployer-git</span> <span class="string">--save</span></span><br><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-theme-kratos-rebirth</span> <span class="string">--save</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span> <span class="string">Hexo</span></span><br><span class="line"><span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">hexo</span> <span class="string">clean</span></span><br><span class="line"><span class="string">hexo</span> <span class="string">generate</span></span><br><span class="line"><span class="string">hexo</span> <span class="string">deploy</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>再编写本地文件目录下的_config.yml 文件</strong></li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Hexo Configuration</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/configuration.html</span></span><br><span class="line"><span class="comment">## Source: https://github.com/hexojs/hexo/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">keywords:</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">John</span> <span class="string">Doe</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">en</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here.</span></span><br><span class="line"><span class="comment">## For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://example.com</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line"><span class="attr">pretty_urls:</span></span><br><span class="line"><span class="attr">trailing_index:</span> <span class="literal">true</span> <span class="comment"># Set to false to remove trailing &#x27;index.html&#x27; from permalinks</span></span><br><span class="line"><span class="attr">trailing_html:</span> <span class="literal">true</span> <span class="comment"># Set to false to remove trailing &#x27;.html&#x27; from permalinks</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span></span><br><span class="line"><span class="attr">code_dir:</span> <span class="string">downloads/code</span></span><br><span class="line"><span class="attr">i18n_dir:</span> <span class="string">:lang</span></span><br><span class="line"><span class="attr">skip_render:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:title.md</span> <span class="comment"># File name of new posts</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">external_link:</span></span><br><span class="line"><span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line"><span class="attr">field:</span> <span class="string">site</span> <span class="comment"># Apply to the whole site</span></span><br><span class="line"><span class="attr">exclude:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">relative_link:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">future:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">highlight:</span></span><br><span class="line"><span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">auto_detect:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">tab_replace:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">wrap:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">hljs:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">prismjs:</span></span><br><span class="line"><span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">preprocess:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">tab_replace:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Home page setting</span></span><br><span class="line"><span class="comment"># path: Root path for your blogs index page. (default = &#x27;&#x27;)</span></span><br><span class="line"><span class="comment"># per_page: Posts displayed per page. (0 = disable pagination)</span></span><br><span class="line"><span class="comment"># order_by: Posts order. (Order by date descending by default)</span></span><br><span class="line"><span class="attr">index_generator:</span></span><br><span class="line"><span class="attr">path:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line"><span class="attr">order_by:</span> <span class="string">-date</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line"><span class="attr">default_category:</span> <span class="string">uncategorized</span></span><br><span class="line"><span class="attr">category_map:</span></span><br><span class="line"><span class="attr">tag_map:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Metadata elements</span></span><br><span class="line"><span class="comment">## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta</span></span><br><span class="line"><span class="attr">meta_generator:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Date / Time format</span></span><br><span class="line"><span class="comment">## Hexo uses Moment.js to parse and display date</span></span><br><span class="line"><span class="comment">## You can customize the date format as defined in</span></span><br><span class="line"><span class="comment">## http://momentjs.com/docs/#/displaying/format/</span></span><br><span class="line"><span class="attr">date_format:</span> <span class="string">YYYY-MM-DD</span></span><br><span class="line"><span class="attr">time_format:</span> <span class="string">HH:mm:ss</span></span><br><span class="line"><span class="comment">## updated_option supports &#x27;mtime&#x27;, &#x27;date&#x27;, &#x27;empty&#x27;</span></span><br><span class="line"><span class="attr">updated_option:</span> <span class="string">&#x27;mtime&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pagination</span></span><br><span class="line"><span class="comment">## Set per_page to 0 to disable pagination</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line"><span class="attr">pagination_dir:</span> <span class="string">page</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Include / Exclude file(s)</span></span><br><span class="line"><span class="comment">## include:/exclude: options only apply to the &#x27;source/&#x27; folder</span></span><br><span class="line"><span class="attr">include:</span></span><br><span class="line"><span class="attr">exclude:</span></span><br><span class="line"><span class="attr">ignore:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">kratos-rebirth</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">repository:</span> <span class="string">git@github.com:xyokei/xyokei.github.io.git</span></span><br><span class="line"><span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line"><span class="comment">#name: xyokei</span></span><br><span class="line"><span class="comment">#email: autumnsigni@gmail.com</span></span><br></pre></td></tr></table></figure>
+
+<p>Action 整完后若访问 xxx.github.io404，就稍等下，github pages 反应慢</p>
+<h2 id="四、hexo-github-Action-yuque"><a href="#四、hexo-github-Action-yuque" class="headerlink" title="四、hexo + github Action + yuque"></a>四、hexo + github Action + yuque</h2><p>参考博文<br><a target="_blank" rel="noopener" href="https://www.yuque.com/1874w/1874.cool/roeayv">https://www.yuque.com/1874w/1874.cool/roeayv</a><br><a target="_blank" rel="noopener" href="https://www.zhwei.cn/hexo-github-actions-yuque/">https://www.zhwei.cn/hexo-github-actions-yuque/</a><br>本来就是喜欢用语雀写东西，这下直接一步到位<br>github pages 参考这个 <a target="_blank" rel="noopener" href="https://www.yuque.com/hxfqg9/web/gtb5ck">https://www.yuque.com/hxfqg9/web/gtb5ck</a><br>官方地址 ： <a target="_blank" rel="noopener" href="https://github.com/x-cold/yuque-hexo">https://github.com/x-cold/yuque-hexo</a></p>
+<h2 id="五、-写文档-和-主题"><a href="#五、-写文档-和-主题" class="headerlink" title="五、 写文档 和 主题"></a>五、 写文档 和 主题</h2><h3 id="添加分类和标签博客参考"><a href="#添加分类和标签博客参考" class="headerlink" title="添加分类和标签博客参考"></a>添加分类和标签博客参考</h3><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904081891262471">https://juejin.cn/post/6844904081891262471</a><br>主题参考文档<br>github 仓库 ：<a target="_blank" rel="noopener" href="https://github.com/Candinya/Kratos-Rebirth">https://github.com/Candinya/Kratos-Rebirth</a></p>
+<p>配置文档：</p>
+<ul>
+<li>hexo 没有空分类，分类是在写文章时设</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>编写 categories 文件夹下的 index.md 文件</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 添加分类</span><br><span class="line">date: 2022-10-12 10:29:52</span><br><span class="line"><span class="section">type: &quot;categories&quot;</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2022-10-12 11:21:24</span><br><span class="line"><span class="section">type: &quot;tags&quot;</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: git学习笔记</span><br><span class="line">date: 2021-01-19 12:12:57</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> 笔记</span><br><span class="line"><span class="bullet">  -</span> JAVA</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">  -</span> JAVA</span><br><span class="line"><span class="section">  - GIT</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"><span class="section"># 一、理论</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 1.1 思想</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="更改站点图标和头像"><a href="#更改站点图标和头像" class="headerlink" title="更改站点图标和头像"></a>更改站点图标和头像</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> 带图床的</span><br><span class="line">  site<span class="emphasis">_logo: https://ga.candinya.com/avatar/a7f9e15fef26e0a540edc977e21cb3eb</span></span><br><span class="line"><span class="emphasis">  avatarUri: https://ga.candinya.com/avatar/a7f9e15fef26e0a540edc977e21cb3eb</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">- 使用本地文件</span></span><br><span class="line"><span class="emphasis">  site_</span>logo: /images/avatar.webp</span><br><span class="line">  avatarUri: /images/avatar.webp</span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 各种配置信息直接参照以下配置文件吧</span><br><span class="line">  site<span class="emphasis">_logo: /images/avatar.webp</span></span><br><span class="line"><span class="emphasis">  avatarUri: /images/avatar.webp</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">topMenu:</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">- label: 首页</span></span><br><span class="line"><span class="emphasis">  icon: home</span></span><br><span class="line"><span class="emphasis">  url: /</span></span><br><span class="line"><span class="emphasis">- label: 分类</span></span><br><span class="line"><span class="emphasis">  icon: bookmark</span></span><br><span class="line"><span class="emphasis">  url: /categories</span></span><br><span class="line"><span class="emphasis">- label: 标签</span></span><br><span class="line"><span class="emphasis">  icon: tags</span></span><br><span class="line"><span class="emphasis">  url: /tags</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">- label: 归档</span></span><br><span class="line"><span class="emphasis">  icon: archive</span></span><br><span class="line"><span class="emphasis">  url: /archives/</span></span><br><span class="line"><span class="emphasis">- label: 关于我</span></span><br><span class="line"><span class="emphasis">  icon: user-circle</span></span><br><span class="line"><span class="emphasis">  url: /about/</span></span><br><span class="line"><span class="emphasis">- label: 友链</span></span><br><span class="line"><span class="emphasis">  icon: paw</span></span><br><span class="line"><span class="emphasis">  url: /friends/</span></span><br><span class="line"><span class="emphasis">- label: 链接</span></span><br><span class="line"><span class="emphasis">  icon: link</span></span><br><span class="line"><span class="emphasis">  submenu:</span></span><br><span class="line"><span class="emphasis">  - label: 作者博客</span></span><br><span class="line"><span class="emphasis">    url: https://candinya.com</span></span><br><span class="line"><span class="emphasis">  - label: 项目链接</span></span><br><span class="line"><span class="emphasis">    url: https://github.com/Candinya/Kratos-Rebirth</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">vendors:</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis"># 常用 CDN 基地址:</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis"># https://unpkg.com/</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis"># https://cdn.jsdelivr.net/npm/</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis"># 以下一行代码指定 npm cdn 基地址，该 CDN 应该兼容 jsdelivr 使用的路径格式</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis"># npm_</span>cdn: https://cdn.jsdelivr.net/npm/</span><br><span class="line"></span><br><span class="line">packages:</span><br><span class="line">hexo-theme-kratos-rebirth: # 以下一行代码用于对某个包单独配置 cdn 基地址，使用 null 表示不从 cdn 获取此包 # cdn<span class="emphasis">_url: null # cdn_</span>url: https://cdn.jsdelivr.net/npm/hexo-theme-kratos-rebirth@latest/</span><br><span class="line">aplayer: # 以下一行代码指定所使用的库版本 # 默认情况下会使用主题开发组进行开发调试时所使用的版本（通常而言也是最适合的版本） # 因此该值不建议修改 # # 注意：如果选择其他版本，则必须配置 npm<span class="emphasis">_cdn 或 为包单独配置 cdn_</span>url 或 修改 vendors 目录， # 这是因为主题自带的库只含有默认版本，必须从 cdn 加载其他版本或由用户手动提供其他版本的相关文件 # # 警告：随意切换版本可能造成主题无法正常工作 # # version: 1.10.1</span><br><span class="line">files:</span><br><span class="line">&quot;dist/APlayer.min.css&quot;: # 以下代码用于单独对某个文件进行映射，以便于使用不符合 jsdelivr 路径格式的 CDN（或其他特殊情形） # 使用 null 表示不重定向（默认行为） # relocate: null # relocate: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css</span><br><span class="line"></span><br><span class="line"><span class="code">          # 以下代码用于指定 SRI 以增强安全性</span></span><br><span class="line"><span class="code">          # 注意，仅有部分组件支持 SRI，不支持的组件会忽略此值</span></span><br><span class="line"><span class="code">          # integrity: sha256-6Y7CJDaltoeNgk+ZftgCD9jLgmGv4xKUo8nQ0HgAwVo=</span></span><br><span class="line"><span class="code"></span></span><br><span class="line">friends:</span><br><span class="line">list:</span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> name: &quot;百度&quot;</span><br><span class="line">  bio: &quot;喵~&quot;</span><br><span class="line">  avatar: &quot;../images/avatar.webp&quot;</span><br><span class="line">  link: &quot;https://baidu.com&quot;</span><br><span class="line"></span><br><span class="line"><span class="section"># Footer 页脚配置</span></span><br><span class="line"></span><br><span class="line">group<span class="emphasis">_link:</span></span><br><span class="line"><span class="emphasis">contact:</span></span><br><span class="line"><span class="emphasis">weibo:</span></span><br><span class="line"><span class="emphasis">mail:</span></span><br><span class="line"><span class="emphasis">telegram: CandyUnion</span></span><br><span class="line"><span class="emphasis">twitter:</span></span><br><span class="line"><span class="emphasis">facebook:</span></span><br><span class="line"><span class="emphasis">linkedin:</span></span><br><span class="line"><span class="emphasis">fediverse:</span></span><br><span class="line"><span class="emphasis">instance:</span></span><br><span class="line"><span class="emphasis">username:</span></span><br><span class="line"><span class="emphasis">github: xyokei</span></span><br><span class="line"><span class="emphasis">rss:</span></span><br><span class="line"><span class="emphasis">timenotice: 本站已运行</span></span><br><span class="line"><span class="emphasis">icp:</span></span><br><span class="line"><span class="emphasis">psr:</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">posts:</span></span><br><span class="line"><span class="emphasis">donate: true</span></span><br><span class="line"><span class="emphasis">comments:</span></span><br><span class="line"><span class="emphasis">provider: gitalk</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">gitalk:</span></span><br><span class="line"><span class="emphasis">clientID: &#x27;GitHub Application Client ID&#x27;</span></span><br><span class="line"><span class="emphasis">clientSecret: &#x27;GitHub Application Client Secret&#x27;</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis"># repo: &#x27;Kratos-Rebirth-Demo&#x27;</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis"># owner: &#x27;Candinya&#x27;</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis"># admin:</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis"># - &#x27;Candinya&#x27;</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis"># distractionFreeMode: false</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis"># JavaScript 相关配置</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">## 由于 Javascript 被压缩后难以有效编辑与生成，因而为了简化操作，将相关的配置项在生成文件时以独立的 json 文件写出，调用时使用 fetch API 获取。</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">jsconfig:</span></span><br><span class="line"><span class="emphasis">main:</span></span><br><span class="line"><span class="emphasis">cover:</span></span><br><span class="line"><span class="emphasis">randomAmount: 20 # 表示从 1~20</span></span><br><span class="line"><span class="emphasis">baseUrl: null # 使用默认值（不单独配置），将跟随 vendors 中的相关设定选择是否使用 cdn</span></span><br><span class="line"><span class="emphasis">filenameTemplate: &quot;thumb*&#123;no&#125;.webp&quot;</span></span><br><span class="line"><span class="emphasis">createTime: &quot;2022/10/12 17:03:12&quot;</span></span><br><span class="line"><span class="emphasis">donateBtn: &quot;支持我~&quot;</span></span><br><span class="line"><span class="emphasis">scanNotice: &quot;扫一扫，好不好？&quot;</span></span><br><span class="line"><span class="emphasis">qr_</span>alipay: &quot;/images/alipayqr.webp&quot;</span><br><span class="line">qr<span class="emphasis">_wechat: &quot;/images/wechatpayqr.webp&quot;</span></span><br><span class="line"><span class="emphasis">siteLeaveEvent: false</span></span><br><span class="line"><span class="emphasis">leaveTitle: &quot;&#123;&#123;&#123;(&gt;*&lt;)&#125;&#125;&#125;哦哟，崩溃啦~&quot;</span></span><br><span class="line"><span class="emphasis">returnTitle: &quot;(_</span>´∇ ｀<span class="emphasis">_)欸，又好啦~&quot;</span></span><br><span class="line"><span class="emphasis">copyrightNotice: &quot;该内容采用 CC BY-NC-SA 4.0 许可协议，著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。&quot;</span></span><br><span class="line"><span class="emphasis">expire_</span>day: 30</span><br><span class="line">topNavScrollToggle: false</span><br></pre></td></tr></table></figure>
+
+<h3 id="预备的目录"><a href="#预备的目录" class="headerlink" title="预备的目录"></a>预备的目录</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">--分类</span><br><span class="line">|-编程</span><br><span class="line">|-JAVA</span><br><span class="line">|-C/C++</span><br><span class="line">|-PYTHON</span><br><span class="line">|-C#</span><br><span class="line">|-PL/SQL</span><br><span class="line">|-</span><br><span class="line">|- 语言</span><br><span class="line">|-英语</span><br><span class="line">|-单词</span><br><span class="line">|-小句子</span><br><span class="line">|-文章</span><br><span class="line">|-日语</span><br><span class="line">|- LeetCode</span><br><span class="line">|-数据结构</span><br><span class="line">|-算法</span><br><span class="line">|- 工作</span><br><span class="line">|- 面试</span><br><span class="line">|- 心迹</span><br><span class="line">|- 生活碎片</span><br><span class="line">--标签</span><br><span class="line">|- Linux</span><br><span class="line">|- Shell</span><br><span class="line">|- Windows Bat</span><br><span class="line">|- VMware</span><br><span class="line">|- 笔记</span><br></pre></td></tr></table></figure>
+
+<h2 id="六、主题"><a href="#六、主题" class="headerlink" title="六、主题"></a>六、主题</h2><p>从 Action 安装主题 切换到 github 的 主题目录<br>目的 ： 想修改下背景图</p>
+<ol>
+<li><p>git clone 主题到本地，修该 yml 后 访问 页面 为空</p>
+<div style="background: #E8F7FF;padding:10px;border: 1px solid #ABD2DA;border-radius:5px;margin-bottom:5px;">原因：thems下文件夹名一定要与config.yml里的名字一致</div>
+</li>
+<li><p>themes 下 source 的图片生成不出来</p>
+<div style="background: #E8F7FF;padding:10px;border: 1px solid #ABD2DA;border-radius:5px;margin-bottom:5px;">把主题下的图片移到根目录 下的source里</div>
+</li>
+<li><p>话说我不就想自己 搞图片 的，直接在 source 里新建图片文件夹感觉就行了，也不用再移动主题了，不想做了，感觉可以</p>
+</li>
+</ol>
+<h2 id="七-、选择"><a href="#七-、选择" class="headerlink" title="七 、选择"></a>七 、选择</h2><p>目前 yuque 的自动同步也可以。本地编辑也可以，唯一的问题是<br>搭建七牛云图床时 自动上传的图片 文件损坏 ，找不到解决方法了</p>
+<ol>
+<li>还是本地手动上传吧 ，然后替换连接，可以用<code>python</code> 来搞定</li>
+<li>yuque 只写不带 图片的，比如记一些 学习 的笔记 和代码 之类的</li>
+</ol>
+<p>或者直接 在上传后在 yuque 里插 cdn 连接</p>
+<h2 id="八-、问题"><a href="#八-、问题" class="headerlink" title="八 、问题"></a>八 、问题</h2><p>问题描述 : 上传图片到七牛云时,图片一直是空白的小方块<br><strong>解决:</strong></p>
+<ol>
+<li>测试<blockquote>
+<p>想法:应该是取图片的时候,图片损坏了<br>把 yuque-hexo 里的 util 的代码扒出读取图片的部分,开始找</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> superagent = <span class="built_in">require</span>(<span class="string">&quot;superagent&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">img2Buffer</span>(<span class="params">imgUrl</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">await</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">async</span> <span class="keyword">function</span> (<span class="params">resolve</span>) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">await</span> superagent</span><br><span class="line">        .<span class="title function_">get</span>(imgUrl)</span><br><span class="line">        .<span class="title function_">buffer</span>(<span class="literal">true</span>)</span><br><span class="line">        .<span class="title function_">parse</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">const</span> buffer = [];</span><br><span class="line">          res.<span class="title function_">on</span>(<span class="string">&quot;data&quot;</span>, <span class="function">(<span class="params">chunk</span>) =&gt;</span> &#123;</span><br><span class="line">            buffer.<span class="title function_">push</span>(chunk);</span><br><span class="line">          &#125;);</span><br><span class="line">          res.<span class="title function_">on</span>(<span class="string">&quot;end&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">const</span> data = <span class="title class_">Buffer</span>.<span class="title function_">concat</span>(buffer);</span><br><span class="line">            <span class="title function_">resolve</span>(data);</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      out.<span class="title function_">warn</span>(<span class="string">`invalid img: <span class="subst">$&#123;imgUrl&#125;</span>`</span>);</span><br><span class="line">      <span class="title function_">resolve</span>(<span class="literal">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">img2Cdn</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> imgBuffer = <span class="keyword">await</span> <span class="title function_">img2Buffer</span>(</span><br><span class="line">    <span class="string">&quot;https://cdn.nlark.com/yuque/0/2022/png/22879009/1665974821037-8d78a0bb-f54f-4e24-a8c9-5162b3a52044.png&quot;</span></span><br><span class="line">  );</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(imgBuffer.<span class="title function_">toString</span>());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">img2Cdn</span>();</span><br></pre></td></tr></table></figure>
+
+<p>上述代码 运行 <code>node app.js</code> 后出现以下问题<br><img src="https://yokeii.com/blog/images/Ft-dbcNMyAq1s8rt_2ZLUZOHanFr.png"><br>报了 403 错,由于 superagent 不会将 4xx 何 5xx 当成错误,所以,就一直往下走了,<br>试着修改下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> superagent = <span class="built_in">require</span>(<span class="string">&quot;superagent&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">img2Buffer</span>(<span class="params">imgUrl</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">await</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">async</span> <span class="keyword">function</span> (<span class="params">resolve</span>) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">await</span> superagent</span><br><span class="line">        .<span class="title function_">get</span>(imgUrl)</span><br><span class="line">        .<span class="title function_">set</span>(<span class="string">&quot;User-agent&quot;</span>, <span class="string">&quot;Mozilla 5.10&quot;</span>)</span><br><span class="line">        .<span class="title function_">buffer</span>(<span class="literal">true</span>)</span><br><span class="line">        .<span class="title function_">parse</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">const</span> buffer = [];</span><br><span class="line">          res.<span class="title function_">on</span>(<span class="string">&quot;data&quot;</span>, <span class="function">(<span class="params">chunk</span>) =&gt;</span> &#123;</span><br><span class="line">            buffer.<span class="title function_">push</span>(chunk);</span><br><span class="line">          &#125;);</span><br><span class="line">          res.<span class="title function_">on</span>(<span class="string">&quot;end&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">const</span> data = <span class="title class_">Buffer</span>.<span class="title function_">concat</span>(buffer);</span><br><span class="line">            <span class="title function_">resolve</span>(data);</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      out.<span class="title function_">warn</span>(<span class="string">`invalid img: <span class="subst">$&#123;imgUrl&#125;</span>`</span>);</span><br><span class="line">      <span class="title function_">resolve</span>(<span class="literal">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">img2Cdn</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> imgBuffer = <span class="keyword">await</span> <span class="title function_">img2Buffer</span>(</span><br><span class="line">    <span class="string">&quot;https://cdn.nlark.com/yuque/0/2022/png/22879009/1665974821037-8d78a0bb-f54f-4e24-a8c9-5162b3a52044.png&quot;</span></span><br><span class="line">  );</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(imgBuffer.<span class="title function_">toString</span>());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">img2Cdn</span>();</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://yokeii.com/blog/images/Fue4Az7mAimim7Fl8x1mmH3k0-bq.png"><br>看样子好像好了，回家测试下</p>
+</div>
+        </div>
+        
+            <div class="kratos-copyright text-center clearfix">
+                <h5 itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://xyokei.github.io/2022/10/12/yuque/Hexo%20%E5%B0%8F%E8%AE%B0/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://xyokei.github.io/2022/10/12/yuque/Hexo%20%E5%B0%8F%E8%AE%B0/";
+            const title         = "「Hexo 小记」";
+            const excerpt       = `Hexo 搭建的各种小问题，记录一下`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/Hexo/" rel="tag">Hexo</a>
+                </div>
+                <div class="pull-date">
+                    <time datetime="2022-10-20T08:30:48.306Z" itemprop="dateModified">最后编辑：2022-10-20</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" 36单元废止" href="/2022/02/19/language/english_36daystop/">&lt; 上一篇</a>
+            </div>
+            
+            
+            <div class="nav-next clearfix">
+                <a title=" 常用的SQL语句" href="/2022/10/20/yuque/一些常用的SQL/">下一篇 &gt;</a>
+            </div>
+            
+        </nav>
+    
+    
+        <link rel="stylesheet" href="/vendors/gitalk@1.7.2/dist/gitalk.css"></script>
+<div id="gitalk-container" class="post-comments lazy-load" style="padding-left:2rem; padding-right:2rem;"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            console.log('Gitalk loading...');
+            const gitalk = new Gitalk(Object.assign({
+                id: '/2022/10/12/yuque/Hexo%20%E5%B0%8F%E8%AE%B0/',
+                path: '/2022/10/12/yuque/Hexo%20%E5%B0%8F%E8%AE%B0/'
+            }, JSON.parse('{"clientID":"b64eaab3faddd58d14d2","clientSecret":"01b99b44be16a987ac6b5dc240c9c11e870b86a8","repo":"xyokei.github.io","owner":"xyokei","admin":"xyokei","distractionFreeMode":false}')));
+
+            gitalk.render('gitalk-container');
+        }
+        if (typeof Gitalk === 'undefined') {
+            const src = '/vendors/gitalk@1.7.2/dist/gitalk.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://github.com/gitalk/gitalk">comments powered by Gitalk.</a></noscript>
+    
+</article>
+
+        
+
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="https://yokeii.com/blog/avatar.jpg" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center">随便记记</p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                13
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                8
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                7
+            </span>
+        </a>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81-%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="toc-text">一、 安装环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%BF%85%E5%A4%87%E8%BD%AF%E4%BB%B6"><span class="toc-text">1.1 必备软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E6%9B%B4%E6%94%B9%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97%E4%BD%8D%E7%BD%AE"><span class="toc-text">1.2 更改安装模块位置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81hexo-%E6%96%B0%E6%89%8B%E7%89%88"><span class="toc-text">二、hexo 新手版</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-text">2.1 创建仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E6%9C%AC%E5%9C%B0%E6%8B%89-hexo"><span class="toc-text">2.2 本地拉 hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-git-%E8%B4%A6%E6%88%B7%E8%AE%BE%E7%BD%AE"><span class="toc-text">2.3 git 账户设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81hexo-Github-Action-%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E7%89%88"><span class="toc-text">三、hexo + Github Action 自动部署版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81hexo-github-Action-yuque"><span class="toc-text">四、hexo + github Action + yuque</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81-%E5%86%99%E6%96%87%E6%A1%A3-%E5%92%8C-%E4%B8%BB%E9%A2%98"><span class="toc-text">五、 写文档 和 主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE%E5%8D%9A%E5%AE%A2%E5%8F%82%E8%80%83"><span class="toc-text">添加分类和标签博客参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E7%AB%99%E7%82%B9%E5%9B%BE%E6%A0%87%E5%92%8C%E5%A4%B4%E5%83%8F"><span class="toc-text">更改站点图标和头像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%84%E5%A4%87%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-text">预备的目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E4%B8%BB%E9%A2%98"><span class="toc-text">六、主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83-%E3%80%81%E9%80%89%E6%8B%A9"><span class="toc-text">七 、选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB-%E3%80%81%E9%97%AE%E9%A2%98"><span class="toc-text">八 、问题</span></a></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/MarkDown/">MarkDown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/SQL/">SQL</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/Windows/">Windows</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E8%A8%80/">语言</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E8%A8%80/%E8%8B%B1%E8%AF%AD/">英语</a><span class="category-list-count">1</span></li></ul></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Bat/" style="font-size: 0.67em;">Bat</a> <a href="/tags/Git/" style="font-size: 0.67em;">Git</a> <a href="/tags/Hexo/" style="font-size: 0.6em;">Hexo</a> <a href="/tags/Java/" style="font-size: 0.73em;">Java</a> <a href="/tags/MarkDown/" style="font-size: 0.6em;">MarkDown</a> <a href="/tags/SQL/" style="font-size: 0.8em;">SQL</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 0.6em;">笔记</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2022/10/20/yuque/nodejs%20%E7%AC%94%E8%AE%B0/"><i class="fa  fa-book"></i> nodejs 笔记</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/10/20/yuque/SQL%E9%97%AE%E9%A2%98/"><i class="fa  fa-book"></i> SQL问题记录</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/10/20/yuque/%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84SQL/"><i class="fa  fa-book"></i> 常用的SQL语句</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/10/12/yuque/Hexo%20%E5%B0%8F%E8%AE%B0/"><i class="fa  fa-book"></i> Hexo 小记</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/02/19/language/english_36daystop/"><i class="fa  fa-book"></i> 36单元废止</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  class="ap-lrc"  >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        <li><a href="mailto:autumnsigni@gmail.com"><i class="fa fa-envelope"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://t.me/autumnkk"><i class="fa fa-telegram"></i></a></li>
+                        
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/xyokei"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2022 测试ing~ 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by xyokei.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+
+    <script async src="/js/candy.min.js"></script>
+
+
+
+    <script defer src="/vendors/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    
+    <script defer src="/vendors/meting@2.0.1/dist/Meting.min.js"></script>
+    <meting-js
+        server="netease"
+        type="playlist"
+        id="7683772009"
+        order="random"
+        fixed="true"
+    >
+    </meting-js>
+
+
+
+    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="/vendors/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>
